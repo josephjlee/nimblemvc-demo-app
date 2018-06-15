@@ -1,16 +1,19 @@
 <?php
     // Database parameters.
     define('DB_HOST', 'localhost');
-    define('DB_USER', 'YOUR_USERNAME');
-    define('DB_PASSWORD', 'PASSWORD_OF_YOUR_DATABASE');
-    define('DB_NAME', 'NAME_OF_YOUR_DATABASE');
+    define('DB_USER', 'root');
+    define('DB_PASSWORD', '');
+    define('DB_NAME', 'fmvc-demo-app');
 
     // App root.
     define('APP_ROOT', dirname(dirname(__FILE__)));
 
-    //URL root.
-    define('URL_ROOT', 'YOUR_DOMAIN_NAME');
+    //URL root (do not leave any trailing slash).
+    define('URL_ROOT', 'http://localhost/fmvc-demo-app');
 
     // Site name.
-    define('SITE_NAME', 'YOUR_SITE_NAME');
+    define('SITE_NAME', 'Farhan\'s Blog');
+
+    // Application version.
+    define('APP_VERSION', '1.0.0');
 ?>

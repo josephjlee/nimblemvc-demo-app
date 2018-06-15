@@ -1,15 +1,14 @@
 <?php 
     class Pages extends Controller {
         public function __construct() {
-            // $this->postModel = $this->model('Post');
+
         }
 
         public function index() {
-            // $posts = $this->postModel->getPosts();
 
             $data = [
-                'title' => 'WELCOME TO FARHAN\'S MVC PHP FRAMEWORK',
-                // 'posts' => $posts
+                'title' => 'Farhan\'s Blog',
+                'description' => 'Simple blogging application built on <strong>Farhan\'s MVC PHP Framework.</strong>'
             ];
 
             $this->view('pages/index', $data);
@@ -17,7 +16,7 @@
 
         public function about() {
             $data = [
-                'title' => 'ABOUT US'
+                'title' => 'About Us'
             ];
 
             $this->view('pages/about', $data);
