@@ -2,7 +2,9 @@
 
 **DIYMVC PHP framework (or boilerplate, call it the way you want to)** is a small framework that follows the famous **Model-View-Controller** architecture.
 
-This is a demo blogging app created with **DIYMVC PHP framework (or boilerplate, call it the way you want to)** by me and can be found in my [diymvc](https://github.com/farhanhasinc/diymvc) repo. Have a look at the code to learn more about this framework as the doc at it's current state is pretty horrible :unamused:
+This is a demo blogging app created with **DIYMVC PHP framework** by me.
+The framework itself can be found in my [diymvc](https://github.com/farhanhasinc/diymvc) repo. 
+You can have a look at the code of this demo to learn more about the framework as the doc at it's current state is pretty horrible :unamused:
 
 ## Dependencies
 
