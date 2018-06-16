@@ -19,5 +19,6 @@ You may install [XAMPP](https://www.apachefriends.org/index.html)/[WAMP](http://
 * Create a database.
 * Go to **phpmyadmin**.
 * Create a database with name **diymvc-demo-app**.
+* Import the sql dump file kept inside **_db** folder.
 * Go to **localhost/diymvc-demo-app**
 * Voila!
