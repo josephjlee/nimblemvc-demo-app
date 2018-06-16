@@ -8,7 +8,7 @@
 
             $data = [
                 'title' => 'Farhan\'s Blog',
-                'description' => 'Simple blogging application built on <strong>Farhan\'s MVC PHP Framework.</strong>'
+                'description' => 'Simple blogging application built on <strong>DIYMVC PHP Framework.</strong>'
             ];
 
             $this->view('pages/index', $data);

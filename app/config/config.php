@@ -9,7 +9,7 @@
     define('APP_ROOT', dirname(dirname(__FILE__)));
 
     //URL root (do not leave any trailing slash).
-    define('URL_ROOT', 'http://localhost/fmvc-demo-app');
+    define('URL_ROOT', 'http://localhost/diymvc-demo-app');
 
     // Site name.
     define('SITE_NAME', 'Farhan\'s Blog');

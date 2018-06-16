@@ -56,7 +56,16 @@
                 // Make sure there are no errors.
                 if(empty($data['email_err']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])) {
                     // Validated
-                    die("SUCCESS!");
+                    // Hash password.
+                    $data['password'] = password_hash($data['password'], PASSWORD_ARGON2I);
+
+                    // Register users.
+                    if($this->userModel->register($data)) {
+                        flash('register_success', 'You\'ve been registered!');
+                        redirect('users/login');
+                    } else {
+                        die("Something went wrong during the registration process.");
+                    }
                 } else {
                     // Load view with errors.
                     $this->view('users/register', $data);
@@ -104,10 +113,27 @@
                     $data['password_err'] = 'Password field can not be empty.';
                 }
 
+                // Check for email.
+                if($this->userModel->findUserByEmail($data['email'])) {
+
+                } else {
+                    $data['email_err'] = 'No user found with that email address.';
+                }
+
                 // Make sure there are no errors.
                 if(empty($data['email_err']) && empty($data['password_err'])) {
                     // Validated
-                    die("SUCCESS!");
+                    // Verify password and login user.
+                    $loggedInUser = $this->userModel->login($data['email'], $data['password']);
+
+                    if($loggedInUser) {
+                        // Create session.
+                        $this->createUserSession($loggedInUser);
+                    } else {
+                        $data['password_err'] = 'Password incorrect!';
+
+                        $this->view('users/login', $data);
+                    }
                 } else {
                     // Load view with errors.
                     $this->view('users/login', $data);
@@ -124,6 +150,28 @@
 
                 // Load the view
                 $this->view('users/login', $data);
+            }
+        }
+
+        public function createUserSession($user) {
+            $_SESSION['user_id'] = $user->id;
+            $_SESSION['user_email'] = $user->email;
+            $_SESSION['user_name'] = $user->name;
+            redirect('pages/index');
+        }
+
+        public function logout() {
+            unset($_SESSION['user_id']);
+            unset($_SESSION['user_email']);
+            unset($_SESSION['user_name']);
+            session_destroy();
+        }
+
+        public function isLoggedIn() {
+            if(isset($_SESSION['user_id'])) {
+                return true;
+            } else {
+                return false;
             }
         }
     }
