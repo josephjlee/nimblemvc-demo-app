@@ -132,7 +132,7 @@
                     } else {
                         $data['password_err'] = 'Password incorrect!';
 
-                        $this->view('users/login', $data);
+                        $this->view('posts', $data);
                     }
                 } else {
                     // Load view with errors.
@@ -165,14 +165,7 @@
             unset($_SESSION['user_email']);
             unset($_SESSION['user_name']);
             session_destroy();
-        }
-
-        public function isLoggedIn() {
-            if(isset($_SESSION['user_id'])) {
-                return true;
-            } else {
-                return false;
-            }
+            redirect('users/login');
         }
     }
 ?>

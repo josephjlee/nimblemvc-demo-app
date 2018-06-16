@@ -5,7 +5,9 @@
         }
 
         public function index() {
-
+            if(isLoggedIn()) {
+                redirect('posts');
+            }
             $data = [
                 'title' => 'Farhan\'s Blog',
                 'description' => 'Simple blogging application built on <strong>DIYMVC PHP Framework.</strong>'
@@ -16,7 +18,7 @@
 
         public function about() {
             $data = [
-                'title' => 'About Us'
+                'title' => 'About App'
             ];
 
             $this->view('pages/about', $data);
