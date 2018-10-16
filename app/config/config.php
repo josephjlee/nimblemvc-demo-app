@@ -3,13 +3,13 @@
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASSWORD', '');
-    define('DB_NAME', 'diymvc-demo-app');
+    define('DB_NAME', 'nimblemvc-demo-app');
 
     // App root.
     define('APP_ROOT', dirname(dirname(__FILE__)));
 
     //URL root (do not leave any trailing slash).
-    define('URL_ROOT', 'http://localhost/diymvc-demo-app');
+    define('URL_ROOT', 'http://localhost/nimblemvc-demo-app');
 
     // Site name.
     define('SITE_NAME', 'Farhan\'s Blog');
@@ -21,5 +21,5 @@
     define('FRAMEWORK_VERSION', 'alpha-0.1');
 
     // Framework name.
-    define('FRAMEWORK_NAME', 'DIYMVC PHP Framework');
+    define('FRAMEWORK_NAME', 'NimbleMVC PHP Framework');
 ?>
